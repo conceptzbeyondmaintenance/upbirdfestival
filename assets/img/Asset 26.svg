@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 866 404.61">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2 {
+        clip-path: url(#clippath);
+      }
+    </style>
+    <clipPath id="clippath">
+      <path class="cls-1" d="M853.47,13.9c-37.2,0-37.2,2.14-74.39,2.14s-37.2-2.6-74.39-2.6-37.19-6.9-74.39-6.9-37.19-4.92-74.39-4.92-37.19-.04-74.39-.04-37.19,15.06-74.39,15.06S369.94,0,332.75,0s-37.19,7.53-74.39,7.53-37.19,7.86-74.39,7.86-37.19-7.52-74.38-7.52-37.19,1.02-74.38,1.02C18.36,8.9,8.4,5.3,0,3.59v401.02h866V12.76c-3.81.71-7.96,1.14-12.53,1.14Z"/>
+    </clipPath>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer 1">
+    <g class="cls-2">
+      <image width="1200" height="802" transform="translate(0 -135.45) scale(.72)" xlink:href="../../Links/ALLAHABAD-II.jpg"/>
+    </g>
+  </g>
+</svg>
