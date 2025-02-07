@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="assets/css/plugins/sidebar.css">
     <link rel="stylesheet" href="assets/css/plugins/slick-slider.css">
     <link rel="stylesheet" href="assets/css/plugins/swiper-bundle.css">
+	<link rel="stylesheet" href="assets/css/plugins/glightbox.min.css">
     <link rel="stylesheet" href="assets/css/main.css">
 
     <!--=====  JS SCRIPT LINK =======-->
@@ -75,7 +76,7 @@
           </div>
           <div class="vl-header-action-item d-block d-lg-none">
             <button type="button" class="vl-offcanvas-toggle">
-              <i class="fa-solid fa-bars-staggered"></i>
+              <i class="fa-solid fa-bars"></i>
             </button>
           </div>
         </div>
@@ -120,7 +121,10 @@
             Lucknow, Uttar Pradesh - 226001
           </p>
           <p class="fax">
-            Fax No.: 0522-2206168 (Fax) | Email ID: pccf-up@nic.in
+            Fax No.: 0522-2206168 (Fax)  
+          </p>
+		  <p class="fax">
+            Email ID: pccf-up@nic.in
           </p>
           <p class="tel">
             Tel No.: 0522-2209814, 4262500
@@ -672,9 +676,8 @@
           </div>
           <div class="social-box">
             <ul>
-              <li><a href="#"><img src="assets/img/facebook.svg"></a></li>
-              <li><a href="#"><img src="assets/img/x.svg"></a></li>
-              <li><a href="#"><img src="assets/img/instagram.svg"></a></li>
+              <li><a href="http://www.facebook.com/upbirdfest.in" target="_blank"><img src="assets/img/facebook.svg"></a></li>
+              <li><a href="http://www.instagram.com/upbirdfest.in" target="_blank"><img src="assets/img/instagram.svg"></a></li>
             </ul>
           </div>
           <hr class="social-separator">
@@ -694,13 +697,15 @@
       <div class="col-lg-4 col-md-4">
         <div class="vl-footer-widget padding-lft">
           <h3>CONTACT US!</h3>
-          <form>
-            <div class="input-area"><input type="text" placeholder="Name"></div>
-            <div class="input-area"><input type="email" placeholder="Email"></div>
-            <div class="input-area"><input type="phone" placeholder="Phone"></div>
-            <div class="input-area"><textarea placeholder="Message"></textarea></div>
-            <div class="input-area"><button type="submit">Send</button></div>
-          </form>
+         <form id="contactForm">
+             <div class="input-area"><input type="text" name="name" placeholder="Name" required></div>
+             <div class="input-area"><input type="email" name="email" placeholder="Email" required></div>
+             <div class="input-area"><input type="text" name="phone" placeholder="Phone" required></div>
+             <div class="input-area"><textarea name="message" placeholder="Message" required></textarea></div>
+             <div class="input-area"><button type="submit">Send</button></div>
+        </form>
+        <div id="formResponse"></div> 
+
         </div>
       </div>
     </div>
@@ -709,8 +714,12 @@
   <div class="vl-copyright-area">
     <div class="container">
       <div class="row">
-        <div class="col-lg-3 align-content-center">
-          <div class="web-count"><span class="count-label">visitors count:</span><span class="count-number">37886</span><span class="count-line">|</span></div>
+       <div class="col-lg-3 align-content-center">
+         <div class="web-count">
+		    <span class="count-label">Visitors count:</span>
+            <span class="count-number" id="visitorCount">Loading...</span>
+            <span class="count-line">|</span>
+          </div>
         </div>
         <div class="col-lg-6 align-content-center text-center">
           <div class="copyright-links">
@@ -728,25 +737,24 @@
 
 
 <!--===== JS SCRIPT LINK =======-->
-<script src="assets/js/plugins/bootstrap.min.js"></script>
-<script src="assets/js/plugins/fontawesome.js"></script>
-<script src="assets/js/plugins/aos.js"></script>
-<script src="assets/js/plugins/gsap.min.js"></script>
-<script src="assets/js/plugins/ScrollTrigger.min.js"></script>
-<script src="assets/js/plugins/Splitetext.js"></script>
-<script src="assets/js/plugins/SmoothScroll.js"></script>
-<script src="assets/js/plugins/sidebar.js"></script>
-<script src="assets/js/plugins/magnific-popup.js"></script>
-<script src="assets/js/plugins/mobilemenu.js"></script>
-<script src="assets/js/plugins/owlcarousel.min.js"></script>
-<script src="assets/js/plugins/waypoints.js"></script>
-<script src="assets/js/plugins/slick-slider.js"></script>
-<script src="assets/js/plugins/circle-progress.js"></script>
-<script src="assets/js/plugins/swiper.js"></script>
-<script src="assets/js/main.js"></script>
-<script src="assets/js/custom.js"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
-<script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+<script src="assets/js/plugins/bootstrap.min.js" defer></script>
+<script src="assets/js/plugins/fontawesome.js" defer></script>
+<script src="assets/js/plugins/aos.js" defer></script>
+<script src="assets/js/plugins/gsap.min.js" defer></script>
+<script src="assets/js/plugins/ScrollTrigger.min.js" defer></script>
+<script src="assets/js/plugins/Splitetext.js" defer></script>
+<script src="assets/js/plugins/SmoothScroll.js" defer></script>
+<script src="assets/js/plugins/sidebar.js" defer></script>
+<script src="assets/js/plugins/magnific-popup.js" defer></script>
+<script src="assets/js/plugins/mobilemenu.js" defer></script>
+<script src="assets/js/plugins/owlcarousel.min.js" defer></script>
+<script src="assets/js/plugins/waypoints.js" defer></script>
+<script src="assets/js/plugins/slick-slider.js" defer></script>
+<script src="assets/js/plugins/circle-progress.js" defer></script>
+<script src="assets/js/plugins/swiper.js" defer></script>
+<script src="assets/js/plugins/glightbox.min.js" defer></script>
+<script src="assets/js/main.js" defer></script>
+<script src="assets/js/custom.js" defer></script>
 
 </body>
 </html>

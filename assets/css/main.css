@@ -1839,7 +1839,7 @@ Location:
   width: 164px;
   -o-object-fit: contain;
      object-fit: contain;
-  filter: brightness(0) invert(1);
+  filter: none;
 }
 .homepage4-body .vl-offcanvas .vl-offcanvas-close button {
   border: none;
@@ -4900,10 +4900,63 @@ color: rgb(240, 90, 35) ; width:100%; max-width: 100%;}
 }
 
 .addressx {
-	font-size: 25px;
+	font-size: 16px;
 	font-weight: 800;
 	color: #641e00;
 	line-height: 1.2;
+}
+.addressx img {
+	width: 13px;
+	vertical-align: initial;
+	margin-right: 2px;
+	display: inline-block;
+	margin-top: -2px;
+}
+
+.absolute-form {
+	max-width: 100%;
+	width:98%
+}
+.container {
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+header .container {
+	padding: 0;
+}
+.absolute-form .col-md-7 {
+	padding-right: 15px;
+}
+
+#temperature {
+	font-weight: 800;
+	font-size: 35px;
+	color: #641e00;
+	line-height: 20px;
+}
+
+#condition {line-height:1;}
+.absolute-form .col-md-5 {
+	padding-left: 15px;
+	border: 0;
+} 
+.degree_img img {
+	width: 15px;
+	margin-top: 4px;
+}
+.weather-forcast {
+	border-left: 0;
+	margin-top: 25px;
+	padding-left: 15px;
+	height: 125px;
+}
+.save-the-date, .day-counter {
+	padding-left: 15px;
+}
+.day-counter > div:not(:last-child) {
+	border-right: 1px solid #ccc;
+	padding-left: 0;
 }
 
 .mn-heading h1, .about-heading h2 {
@@ -4928,9 +4981,7 @@ color: rgb(240, 90, 35) ; width:100%; max-width: 100%;}
 	height: 250px;
 	object-fit: cover;
 }
-.save-the-date, .day-counter {
-	padding-left: 30px;
-}
+
 .about-us {
 	position: relative;
 	padding-top: 60px;

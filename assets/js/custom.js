@@ -181,3 +181,33 @@ $(window).on("scroll", function() {
   });
 });
 
+
+  fetch("assets/js/count/counter.php")
+    .then(response => response.json())
+    .then(data => {
+      document.getElementById("visitorCount").textContent = data.count;
+    })
+    .catch(error => {
+      console.error("Error fetching visitor count:", error);
+      document.getElementById("visitorCount").textContent = "Error";
+    });
+
+
+$(document).ready(function () {
+    $("#contactForm").submit(function (e) {
+        e.preventDefault(); 
+
+        $.ajax({
+            type: "POST",
+            url: "assets/js/mail.php", 
+            data: $(this).serialize(), 
+            success: function (response) {
+                $("#formResponse").html(response); 
+                $("#contactForm")[0].reset(); 
+            },
+            error: function () {
+                $("#formResponse").html("<p style='color: red;'>An error occurred. Please try again.</p>");
+            },
+        });
+    });
+});
