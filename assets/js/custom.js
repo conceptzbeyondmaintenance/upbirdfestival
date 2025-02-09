@@ -191,11 +191,10 @@ $(document).ready(function () {
       } catch (error) {
         console.error("Error fetching visitor count:", error);
       }
-    },
+    }
     getVisitorCount();
     $("#contactForm").submit(function (e) {
         e.preventDefault(); 
-
       const formData = {
         name: document.getElementById("name").value,
         email: document.getElementById("email").value,
@@ -204,14 +203,19 @@ $(document).ready(function () {
       };
 
       try {
-        const response = await fetch("https://api-mvaychpb7a-uc.a.run.app/contact", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(formData),
-        });
 
-        const result = await response.json();
-        alert(result.message);
+        $.ajax({
+            type: "POST",
+            url: "https://api-mvaychpb7a-uc.a.run.app/contact", 
+            data: $(this).serialize(), 
+            success: function (response) {
+                $("#formResponse").html(response.message); 
+                $("#contactForm")[0].reset(); 
+            },
+            error: function () {
+                $("#formResponse").html("<p style='color: red;'>An error occurred. Please try again.</p>");
+            },
+        });
       } catch (error) {
         console.error("Error:", error);
         alert("Failed to send message");
