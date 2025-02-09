@@ -180,34 +180,41 @@ $(window).on("scroll", function() {
     $(this).find(".video-absolute").css("left", `${movement}px`);
   });
 });
-
-
-  fetch("assets/js/count/counter.php")
-    .then(response => response.json())
-    .then(data => {
-      document.getElementById("visitorCount").textContent = data.count;
-    })
-    .catch(error => {
-      console.error("Error fetching visitor count:", error);
-      document.getElementById("visitorCount").textContent = "Error";
-    });
-
+    
 
 $(document).ready(function () {
+    async function getVisitorCount() {
+      try {
+        const response = await fetch("https://api-mvaychpb7a-uc.a.run.app/visitor-count");
+        const data = await response.json();
+        document.getElementById("visitorCount").innerText = data.count;
+      } catch (error) {
+        console.error("Error fetching visitor count:", error);
+      }
+    },
+    getVisitorCount();
     $("#contactForm").submit(function (e) {
         e.preventDefault(); 
 
-        $.ajax({
-            type: "POST",
-            url: "assets/js/mail.php", 
-            data: $(this).serialize(), 
-            success: function (response) {
-                $("#formResponse").html(response); 
-                $("#contactForm")[0].reset(); 
-            },
-            error: function () {
-                $("#formResponse").html("<p style='color: red;'>An error occurred. Please try again.</p>");
-            },
+      const formData = {
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        phone: document.getElementById("phone").value,
+        message: document.getElementById("message").value,
+      };
+
+      try {
+        const response = await fetch("https://api-mvaychpb7a-uc.a.run.app/contact", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(formData),
         });
+
+        const result = await response.json();
+        alert(result.message);
+      } catch (error) {
+        console.error("Error:", error);
+        alert("Failed to send message");
+      }
     });
 });
