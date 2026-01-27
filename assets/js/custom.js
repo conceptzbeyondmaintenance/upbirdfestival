@@ -72,7 +72,7 @@ $(document).ready(function() {
 
 
    function updateCountdown() {
-    const targetDate = new Date("February 17, 2025 00:00:00").getTime();
+    const targetDate = new Date("February 27, 2026 00:00:00").getTime();
     const now = new Date().getTime();
     const timeLeft = targetDate - now;
 
@@ -100,7 +100,7 @@ updateCountdown();
 
   async function fetchWeather() {
     const apiKey = "9f2c22e40d6b98d8087e183b4492dad3"; 
-    const city = "Allahabad,IN";
+    const city = "Lalitpur, IN";
     const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
 
     try {
