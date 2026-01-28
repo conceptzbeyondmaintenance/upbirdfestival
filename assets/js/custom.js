@@ -72,7 +72,7 @@ $(document).ready(function() {
 
 
    function updateCountdown() {
-    const targetDate = new Date("February 27, 2026 00:00:00").getTime();
+    const targetDate = new Date("February 2, 2026 00:00:00").getTime();
     const now = new Date().getTime();
     const timeLeft = targetDate - now;
 
